@@ -32,7 +32,7 @@
           </div>
         </div>
         <div *ngIf="fixture && fixture.squad.length == 0">
-          <fixture-uploader [(fixture)]="fixture" [(players)]="players"></fixture-uploader>
+          <fixture-uploader [fixture]="fixture" [players]="players"></fixture-uploader>
         </div>
         <div>
           <button type="button" class="btn btn-danger" (click)="deleteSquad(fixture)" *ngIf="fixture.squad.length > 0">Delete Team Sheet</button>

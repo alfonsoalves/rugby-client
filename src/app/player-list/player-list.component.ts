@@ -37,7 +37,7 @@ export class PlayerListComponent implements OnInit {
   dataSource_ineligible_j2_league: MatTableDataSource<StatData>;
   dataSource_ineligible_j2_cup: MatTableDataSource<StatData>;
 
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
 
   constructor(private playerService: PlayerService, private route: ActivatedRoute) {
     this.dataSources =  new Map<number, MatTableDataSource<StatData>>();
