@@ -1,0 +1,23 @@
+<form class="example-form" [formGroup]="fixtureForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Date" required aria-label="Date" [matDatepicker]="myDatepicker" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput [ngxTimepicker]="picker" required [value]="newFixture.time" [format]="24" formControlName="time" (dateChange)="setFixtureTime($event)">
+    <ngx-material-timepicker #picker></ngx-material-timepicker>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Opposition" required formControlName="opposition">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Level</mat-label>
+    <select matNativeControl required formControlName="level">
+      <option value="2">J2</option>
+      <option value="4">J4</option>
+    </select>
+  </mat-form-field>
+  <button mat-raised-button color="accent" [disabled]="!fixtureForm.valid">Submit</button>
+  <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+</form>
