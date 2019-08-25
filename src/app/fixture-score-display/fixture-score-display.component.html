@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-grid-list cols="7" rows="2" rowHeight="3em">
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+            UCD
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            {{scores | async | scoreCalculator:'home'}}
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            {{scores | async | scoreCalculator:'away'}}
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+            {{fixture.opposition}}
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="addScore(0)">
+                    <mat-icon>add_circle</mat-icon>
+                    <span>Add try - unconverted</span>
+                </button>
+                <button mat-menu-item (click)="addScore(3)">
+                    <mat-icon>add_circle_outline</mat-icon>
+                    <span>Add try - converted</span>
+                </button>
+                <button mat-menu-item (click)="addScore(1)">
+                    <mat-icon>add</mat-icon>
+                    <span>Add penalty</span>
+                </button>
+                <button mat-menu-item (click)="deleteLastScore()">
+                    <mat-icon>delete</mat-icon>
+                    <span>Delete last score</span>
+                </button>
+            </mat-menu>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <fixture-score-list [scoresList]="scores" [fixture]="fixture"></fixture-score-list>
+</mat-card>
