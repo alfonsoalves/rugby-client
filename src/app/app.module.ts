@@ -25,6 +25,15 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
 import { FixtureUploaderComponent } from './fixture-uploader/fixture-uploader.component';
 import { PlayerActionsComponent } from './player-actions/player-actions.component';
+import { FixtureAddedPopupComponent } from './fixture-added-popup/fixture-added-popup.component';
+import { FixtureScoreDisplayComponent } from './fixture-score-display/fixture-score-display.component';
+import { FixtureScoreListComponent } from './fixture-score-list/fixture-score-list.component';
+import { InputRealPlayerComponent } from './input-real-player/input-real-player.component';
+import { MapScorePipe } from './pipes/map-score.pipe';
+import { PlayerCardPipe } from './pipes/player-card.pipe';
+import { ScoreCalculatorPipe } from './pipes/score-calculator.pipe';
+import { TeamScoreFilterPipe } from './pipes/team-score-filter.pipe';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +47,16 @@ import { PlayerActionsComponent } from './player-actions/player-actions.componen
     AddPlayerComponent,
     FilterDivisionsPipe,
     FixtureUploaderComponent,
-    PlayerActionsComponent
+    PlayerActionsComponent,
+    FixtureAddedPopupComponent,
+    FixtureScoreDisplayComponent,
+    FixtureScoreListComponent,
+    InputRealPlayerComponent,
+    CalendarComponent,
+    MapScorePipe,
+    PlayerCardPipe,
+    ScoreCalculatorPipe,
+    TeamScoreFilterPipe
   ],
   imports: [
     BrowserModule,

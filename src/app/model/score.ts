@@ -4,6 +4,7 @@ export class Score {
     private _fixtureId: number;
     private _playerId: number;
     private _scoreType: number;
+    private _time: String;
 
 
     /**
@@ -70,6 +71,22 @@ export class Score {
 		this._scoreType = value;
 	}
     
+
+    /**
+     * Getter time
+     * @return {String}
+     */
+	public get time(): String {
+		return this._time;
+	}
+
+    /**
+     * Setter time
+     * @param {String} value
+     */
+	public set time(value: String) {
+		this._time = value;
+	}
     
 
 }

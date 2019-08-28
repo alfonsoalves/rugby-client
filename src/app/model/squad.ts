@@ -116,4 +116,20 @@ export class Squad {
 		this._player = value;
 	}
 
+    /**
+     * Getter realPlayerId
+     * @return {number}
+     */
+	public get realPlayerId(): number {
+		return this._realPlayerId;
+	}
+
+    /**
+     * Setter realPlayerId
+     * @param {number} value
+     */
+	public set realPlayerId(value: number) {
+		this._realPlayerId = value;
+	}
+    private _realPlayerId: number;
 }

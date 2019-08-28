@@ -21,8 +21,8 @@ export class FixtureScoreDisplayComponent implements OnInit {
   }
 
   ngOnChanges () {
-      this.scoreService.getScoresForFixture(this.fixture.id)
-      .subscribe(data => this._scores.next(List(data)));
+      // this.scoreService.getScoresForFixture(this.fixture.id)
+      // .subscribe(data => this._scores.next(List(data)));
   }
 
   ngOnInit() {
@@ -48,20 +48,20 @@ export class FixtureScoreDisplayComponent implements OnInit {
     let score = new Score();
     score.fixtureId = this.fixture.id;
     score.scoreType = scoreType;
-    this.scoreService.addScoreForFixture(score)
-      .subscribe(data => {
-        this._scores.next(this._scores.getValue().push(data));
-      });
+    // this.scoreService.addScoreForFixture(score)
+    //   .subscribe(data => {
+    //     this._scores.next(this._scores.getValue().push(data));
+    //   });
   }
 
   public deleteLastScore() {
     const scoreToDelete: Score = this._scores.getValue().filter(score => {
       return score.playerId == undefined || score.playerId == null;
     }).last();
-    this.scoreService.deleteScoreForPlayerAndFixture(scoreToDelete)
-      .subscribe(data => {
-        const idxOfRemovedElement: number = this._scores.getValue().lastIndexOf(scoreToDelete);
-        this._scores.next(this._scores.getValue().remove(idxOfRemovedElement));
-    });
+  //   this.scoreService.deleteScoreForPlayerAndFixture(scoreToDelete)
+  //     .subscribe(data => {
+  //       const idxOfRemovedElement: number = this._scores.getValue().lastIndexOf(scoreToDelete);
+  //       this._scores.next(this._scores.getValue().remove(idxOfRemovedElement));
+  //   });
   }
 }
