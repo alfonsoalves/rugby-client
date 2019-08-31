@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { StatData } from '../model/stat-data';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { InitialStylingValuesIndex } from '@angular/core/src/render3/interfaces/styling';
 
 @Component({
   selector: 'app-player-list',

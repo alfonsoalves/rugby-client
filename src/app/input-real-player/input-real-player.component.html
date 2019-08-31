@@ -2,9 +2,9 @@
     <mat-form-field class="example-full-width">
         <input matInput placeholder="Player" aria-label="Player" [matAutocomplete]="auto" [formControl]="playerCtrl" >
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayName">
-        <mat-option *ngFor="let player of filteredPlayers | async" [value]="player">
-            <span>{{player.name}}</span>
-        </mat-option>
+            <mat-option *ngFor="let player of filteredPlayers | async" [value]="player">
+                <span>{{player.name}}</span>
+            </mat-option>
         </mat-autocomplete>
     </mat-form-field>
     <button mat-stroked-button color="primary" class="float-left" (click)="confirm()">Confirm</button>

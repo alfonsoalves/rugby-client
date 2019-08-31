@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from './material-module'
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +33,7 @@ import { PlayerCardPipe } from './pipes/player-card.pipe';
 import { ScoreCalculatorPipe } from './pipes/score-calculator.pipe';
 import { TeamScoreFilterPipe } from './pipes/team-score-filter.pipe';
 import { CalendarComponent } from './calendar/calendar.component';
+import { MaterialModule } from './material-module'
 
 @NgModule({
   declarations: [
@@ -63,13 +63,13 @@ import { CalendarComponent } from './calendar/calendar.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule,
     FormsModule,
     MatIconModule,
     ReactiveFormsModule,
     MatMomentDateModule,
     NgxMaterialTimepickerModule,
     FileUploadModule,
+    MaterialModule,
     RouterModule.forChild(routes)
   ],
   entryComponents: [FixtureListComponent, AddPlayerComponent, AddFixtureComponent, PlayerActionsComponent],
