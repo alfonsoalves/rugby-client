@@ -70,9 +70,9 @@ import { MaterialModule } from './material-module'
     NgxMaterialTimepickerModule,
     FileUploadModule,
     MaterialModule,
-    RouterModule.forChild(routes)
+    RouterModule.forRoot(routes, { useHash: true })
   ],
-  entryComponents: [FixtureListComponent, AddPlayerComponent, AddFixtureComponent, PlayerActionsComponent],
+  entryComponents: [FixtureListComponent, AddPlayerComponent, FixtureAddedPopupComponent, AddFixtureComponent, PlayerActionsComponent],
   providers: [
     PlayerService, 
     SquadService, 

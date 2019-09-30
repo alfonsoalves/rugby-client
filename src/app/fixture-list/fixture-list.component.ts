@@ -11,6 +11,7 @@ import { SquadId } from '../model/Squad-id';
 import { FileUploader } from 'ng2-file-upload';
 import { SquadService } from '../services/squad.service';
 import { PlayerActionsComponent } from '../player-actions/player-actions.component';
+import { FixtureAddedPopupComponent } from '../fixture-added-popup/fixture-added-popup.component';
 
 @Component({
   selector: 'app-fixture-list',
@@ -48,6 +49,7 @@ export class FixtureListComponent implements OnInit {
     this.players = <Player[]>this.route.snapshot.data.playerData;
     this.fixtures = <Fixture[]>this.route.snapshot.data.fixtureData;
     this.squads = <Squad[]>this.route.snapshot.data.squadData;
+    console.log(this.fixtures);
     this.divisions = new Set(this.fixtures.map(x => x.level, this));
     this.openFixtures = new Map();
     this.fixtures.forEach(function(fixture) {
@@ -95,11 +97,11 @@ export class FixtureListComponent implements OnInit {
 
   public openAddFixtureDialog() {
     let t = this;
-    this.addFixtureDialog.open(FixtureListComponent, {
+    this.addFixtureDialog.open(AddFixtureComponent, {
         width: "250px",
         disableClose: !0
     }).afterClosed().subscribe(function(e) {
-        null != e && t.openPopup(FixtureListComponent, "New fixture added")
+        null != e && t.openPopup(FixtureAddedPopupComponent, "New fixture added")
     })
   }
 
